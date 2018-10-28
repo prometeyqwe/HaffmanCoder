@@ -58,23 +58,15 @@ public class HaffmanDecoder {
     }
 
     public void decod(){
-//        for (String s: inputData) System.out.println(s);
         Tree temp = tree, temp2 = tree;
         buildTree(tree);//build tree
         inOrder(tree);//add symbols to tree
 
         String inputString = inputData[2];
         String outputString = "";
-        System.out.println("inputString: "+inputString);
         int jj=0;
         int jjj=0;
         temp2 = temp = tree;
-        while(jjj<inputString.length()){
-            System.out.print(inputString.charAt(jjj));
-            jjj++;
-        }
-        System.out.println("\nlen: " + inputString.length());
-        System.out.println();
 
         while(jj<inputString.length()){
             if(inputString.charAt(jj)=='0'){
@@ -85,7 +77,6 @@ public class HaffmanDecoder {
                     if(jj==inputString.length()) outputString+=temp.getRoot().getSymbol();
                 }
                 else{
-                    System.out.print(jj+" ");
                     outputString+=temp2.getRoot().getSymbol();
                     temp2 = temp = tree;
                 }
@@ -98,20 +89,13 @@ public class HaffmanDecoder {
                     if(jj==inputString.length()) outputString+=temp.getRoot().getSymbol();
                 }
                 else{
-                    System.out.print(jj+" ");
                     outputString+=temp2.getRoot().getSymbol();
                     temp2 = temp = tree;
                 }
             }
         }
 
-        System.out.println();
-        System.out.println(outputString);
-
-
-
-
-
+        writerOfFile.write(outputString);
     }
 }
 

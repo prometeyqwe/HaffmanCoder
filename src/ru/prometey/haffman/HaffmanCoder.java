@@ -21,6 +21,7 @@ public class HaffmanCoder {
         this.path = path;
         table = new HashMap<>();
         handler = new Handler(path);
+        buildTableOfCodes();
     }
 
     private Tree buildTreeOfHaffman(){
@@ -67,7 +68,6 @@ public class HaffmanCoder {
             treeForFile+=LorR;
             if(tree.getRoot().getSymbol()!= '\0')
                 treeForFileSymbols+=tree.getRoot().getSymbol();
-//            System.out.print(tree.getRoot().getSymbol()+" ");
             inOrder(tree.getLeft(),String.valueOf(0));
             inOrder(tree.getRight(),String.valueOf(1));
         }//if
@@ -89,7 +89,6 @@ public class HaffmanCoder {
             count++;
             j++;
         }
-//        System.out.println("count: " + count);
 
         for (String s: input) inputStirng+=s;
         char[] arr = inputStirng.toCharArray();
