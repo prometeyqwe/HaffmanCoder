@@ -1,0 +1,2 @@
+# HaffmanCoder
+Huffman coding
