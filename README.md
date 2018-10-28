@@ -1,2 +1,2 @@
 # HaffmanCoder
-Huffman coding
+Algorithm
