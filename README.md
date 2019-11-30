@@ -1,2 +1,3 @@
 # HaffmanCoder
-Algorithm
+The algorithm based on Binary Tree
+
